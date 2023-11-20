@@ -1,0 +1,13 @@
+diff --git a/node_modules/remix-i18next/browser/lib/get-client-locales.js b/node_modules/remix-i18next/browser/lib/get-client-locales.js
+index fa8cefa..d30d34b 100644
+--- a/node_modules/remix-i18next/browser/lib/get-client-locales.js
++++ b/node_modules/remix-i18next/browser/lib/get-client-locales.js
+@@ -24,7 +24,7 @@ export function getClientLocales(requestOrHeaders) {
+  * If it's a Headers returns the object directly.
+  */
+ function getHeaders(requestOrHeaders) {
+-    if (requestOrHeaders instanceof Request) {
++    if ("headers" in requestOrHeaders) {
+         return requestOrHeaders.headers;
+     }
+     return requestOrHeaders;

@@ -20,7 +20,7 @@ export default async function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext
 ) {
-  (globalThis as any).Request = request.constructor; //NOTE: for now this is the only solution: https://github.com/remix-run/remix/issues/7819
+  // (globalThis as any).Request = request.constructor; //NOTE: for now this is the only solution: https://github.com/remix-run/remix/issues/7819
   let callbackName = isbot(request.headers.get("user-agent"))
     ? "onAllReady"
     : "onShellReady";
